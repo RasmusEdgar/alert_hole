@@ -8,7 +8,7 @@ sub failure {
   # Fetch config
   my $config = $self->config;
 
-  $self->render(text => $config->{'failure_text'}, status => $config->{'http_4xx'} );
+  $self->render(text => $config->{'failure_text'}, status => $config->{'failure_code'} );
 }
 
 sub loghole {
