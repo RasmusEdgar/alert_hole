@@ -1,0 +1,17 @@
+# Settings, adjust to your liking.
+{
+secrets => 'ReallyLongAndRandomStringAndNu3bersAndNon-St@ndardChars',
+logpath => '/opt/alerthole/alert_hole/logs',
+logprefix => 'alert_hole',
+http_4xx => '404',
+hypnotoad => {
+  listen  => ['http://*:4777'],
+  workers => 2,
+  pid_file => '/opt/alerthole/alert_hole/pid/alert_hole.pid'
+  },
+# Place your ua_strings here. The keys are the names of the external vendors which will send alerts to you.
+ua_strings => {
+  megacorp  => 'aog5chai4taiHengiezi6kah7fualieRoo7Oa7een0Yooloh6og3Yooch8doyo1l',
+  megamamma => 'TheeTah8quezie0dielieyeSai6zoot9ainootheicahyeuj1iesahdohyoo2Eib'
+  }
+}

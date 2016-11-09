@@ -1,0 +1,18 @@
+[Unit]
+Description=alert_hole mojolicious start script
+Requires=network.target
+After=network.target
+
+[Service]
+User=alerthole
+EnvironmentFile=-/etc/sysconfig/alert_hole.env
+Type=simple
+RemainAfterExit=yes
+SyslogIdentifier=alert_hole
+PIDFile=/opt/alerthole/ext_mon/pid/ext_mon.pid
+ExecStart=/opt/alerthole/perl5/bin/hypnotoad /opt/alerthole/ext_mon/script/ext_mon -f
+ExecStop=/opt/alerthole/perl5/bin/hypnotoad -s /opt/alerthole/ext_mon/script/ext_mon
+ExecReload=/opt/alerthole/perl5/bin/hypnotoad /opt/alerthole/ext_mon/script/ext_mon
+
+[Install]
+WantedBy=multi-user.target
