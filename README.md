@@ -29,8 +29,8 @@ Check your browser http://\<url/localhost\>:4778
 
 See the nginx conf example and systemd example in the conf dir.
 
-Place alert\_hole.env in /etc/sysconfig/
-Place alert\_hole.service in /usr/lib/systemd/system/
+Place alert\_hole.env in /etc/sysconfig/  
+Place alert\_hole.service in /usr/lib/systemd/system/  
 Run as root:  
 ```
 systemctl daemon-reload
