@@ -3,7 +3,8 @@
 secrets => 'ReallyLongAndRandomStringAndNu3bersAndNon-St@ndardChars',
 logpath => '/opt/alerthole/alert_hole/logs',
 logprefix => 'alert_hole',
-http_4xx => '404',
+failure_text => "Resource not found.\n",
+failure_code => '404',
 hypnotoad => {
   listen  => ['http://*:4777'],
   workers => 2,

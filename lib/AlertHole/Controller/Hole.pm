@@ -5,7 +5,10 @@ use Mojo::Log;
 sub failure {
   my $self = shift;
 
-  $self->render(text => "Resource not found.\n", status => '403');
+  # Fetch config
+  my $config = $self->config;
+
+  $self->render(text => $config->{'failure_text'}, status => $config->{'http_4xx'} );
 }
 
 sub loghole {
