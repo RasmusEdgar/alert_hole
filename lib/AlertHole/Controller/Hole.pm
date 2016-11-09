@@ -11,7 +11,7 @@ sub failure {
   $self->render(text => $config->{'failure_text'}, status => $config->{'failure_code'} );
 }
 
-sub loghole {
+sub alerthole {
   my $self = shift;
 
   # Fetch config
@@ -20,7 +20,7 @@ sub loghole {
   my $user_agent = $self->req->headers->user_agent;
 
   # Check if user_agent string exists in hash of hashes
-  if ( my @key = grep { $config->{'ua_strings'}{$_} eq $user_agent } keys $config->{'ua_strings'} ) {
+  if ( my @key = grep { $config->{'ua_strings'}{$_} eq $user_agent } keys %{ $config->{'ua_strings'} } ) {
     # Enable logging
     my $log = Mojo::Log->new(path => "$config->{'logpath'}/$config->{'logprefix'}-@{key}.log");
     $self->render(text => "@key OK\n");

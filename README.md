@@ -23,6 +23,7 @@ git clone https://github.com/RasmusEdgar/alert_hole.git
 Test the application (still as the alerthole user):  
 ```
 cd alert_hole
+cp alert_hole.conf.example alert_hole.conf
 morbo -l http://*:4778 script/alert_hole
 ```
 Check your browser http://\<url/localhost\>:4778
